@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Page GIF with Text and Rotation Animation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .text-container {
+            position: absolute;
+            top: 85%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0deg); /* Initial rotation set to 0deg */
+            text-align: center;
+            font-size: 65px;
+            font-weight: bold;
+            font-family: "Gill Sans", sans-serif;
+            animation: rainbowGlow 1s linear infinite, rotateAnimation 4s linear infinite; /* Added rotateAnimation */
+        }
+
+        @keyframes rainbowGlow {
+            0% {
+                color: #ff0000; /* Red */
+            }
+            16.666% {
+                color: #ff9900; /* Orange */
+            }
+            33.333% {
+                color: #ffff00; /* Yellow */
+            }
+            50% {
+                color: #33cc33; /* Green */
+            }
+            66.666% {
+                color: #3399ff; /* Blue */
+            }
+            83.333% {
+                color: #9900cc; /* Purple */
+            }
+            100% {
+                color: #ff0000; /* Back to Red */
+            }
+        }
+
+        @keyframes rotateAnimation {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="https://media1.tenor.com/m/Jc9jT66AJRwAAAAd/chipi-chipi-chapa-chapa.gif" alt="Full Page GIF">
+    <div class="text-container">
+        <p>CHIPI CHIPI CHAPA CHAPA DUBI DUBI DABA DABA</p>
+    </div>
+</body>
+</html>
